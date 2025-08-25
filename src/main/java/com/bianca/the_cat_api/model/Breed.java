@@ -26,7 +26,6 @@ public class Breed {
     
     @Override
     public String toString() {
-        System.out.println("Breed{_id='\" + id + \"', raca='\" + raca + \"', origem='\" + origin + \"', temperamento='\" + temperament +\"', descricao='\" + description +\"'}");
         return "Breed{_id='" + _id + "', raca='" + raca + "', origem='" + origin + "', temperamento='" + temperament +"', descricao='" + description +"'}";
     }
 }
