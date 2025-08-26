@@ -38,54 +38,45 @@ public class CatApiService {
     }
 
     //Listando uma Raça 
-    public String getBreed(@PathVariable String nameBreed) {
+    public Breed[] getBreed(@PathVariable String nameBreed) {
         System.out.println(apiUrl+"/breeds/search?q=air" );
         try {
             // Fazendo o GET
-            String response = restTemplate.getForObject(apiUrl+"/breeds/search?q="+ nameBreed, String.class);
-            return response;
-        } catch (RestClientException e) {
-            // Trata erros de conexão ou HTTP
+            return  restTemplate.getForObject(apiUrl+"/breeds/search?q="+ nameBreed, Breed[].class);
+         } catch (RestClientException e) {
             e.printStackTrace();
-            return "Erro ao acessar a API: " + e.getMessage();
+            return new Breed[0];
         } catch (Exception e) {
-            // Trata outros erros gerais
             e.printStackTrace();
-            return "Erro inesperado: " + e.getMessage();
+            return new Breed[0];
         }
     }
 
     //Listando uma Raça de acordo com o Temperamento
-    public String getBreedTemperament(@PathVariable String nameBreeString, String nameTemperament) {
+    public Breed[] getBreedTemperament(@PathVariable String nameBreeString, String nameTemperament) {
         try {
             // Fazendo o GET
-            String response = restTemplate.getForObject(apiUrl+"/breeds/search?q="+nameBreeString+"&temperament="+ nameTemperament, String.class);
-            return response;
-        } catch (RestClientException e) {
-            // Trata erros de conexão ou HTTP
+            return restTemplate.getForObject(apiUrl+"/breeds/search?q="+nameBreeString+"&temperament="+ nameTemperament, Breed[].class);
+         } catch (RestClientException e) {
             e.printStackTrace();
-            return "Erro ao acessar a API: " + e.getMessage();
+            return new Breed[0];
         } catch (Exception e) {
-            // Trata outros erros gerais
             e.printStackTrace();
-            return "Erro inesperado: " + e.getMessage();
+            return new Breed[0];
         }
     }
 
     //Listando uma Raça de acordo com a Origem
-    public String getBreedOrigin(@PathVariable String nameBreeString, String nameOrigin) {
+    public Breed[] getBreedOrigin(@PathVariable String nameBreeString, String nameOrigin) {
         try {
             // Fazendo o GET
-            String response = restTemplate.getForObject(apiUrl+"/breeds/search?q="+nameBreeString+"&origin="+ nameOrigin, String.class);
-            return response;
-        } catch (RestClientException e) {
-            // Trata erros de conexão ou HTTP
+            return restTemplate.getForObject(apiUrl+"/breeds/search?q="+nameBreeString+"&origin="+ nameOrigin, Breed[].class);
+         } catch (RestClientException e) {
             e.printStackTrace();
-            return "Erro ao acessar a API: " + e.getMessage();
+            return new Breed[0];
         } catch (Exception e) {
-            // Trata outros erros gerais
             e.printStackTrace();
-            return "Erro inesperado: " + e.getMessage();
+            return new Breed[0];
         }
     }
 }

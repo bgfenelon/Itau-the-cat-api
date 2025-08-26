@@ -9,7 +9,7 @@ public class Breed {
 
     // Getters e Setters
     public String get_id() { return _id; }
-    public void set_id(String id) { this._id = id; }
+    public void setId(String id) { this._id = id; }
 
     public String getRaca() { return raca; }
     public void setName(String name) { this.raca = name; }
