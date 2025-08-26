@@ -3,7 +3,7 @@ package com.bianca.the_cat_api.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "catsBase")
+@Document(collection = "BreedInformation")
 public class CatBase {
 
     @Id
